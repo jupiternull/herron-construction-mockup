@@ -163,16 +163,17 @@
     position: relative;
   }
   .marquee-track {
-    display: flex; gap: 3rem; white-space: nowrap;
+    display: flex; gap: 3rem; width: max-content; white-space: nowrap;
     animation: marquee 30s linear infinite;
   }
+  .marquee-group { display: flex; gap: 3rem; }
   .marquee-track span {
     font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em;
     text-transform: uppercase; color: white; opacity: 0.9;
     display: flex; align-items: center; gap: 1.5rem;
   }
   .marquee-track span::after { content: '\2726'; font-size: 0.6rem; opacity: 0.6; }
-  @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-50% - 1.5rem)); } }
 
   /* ─── SECTIONS COMMON ─── */
   section { padding: clamp(4rem, 10vw, 8rem) 0; }
@@ -521,33 +522,36 @@
 <!-- ─── MARQUEE ─── -->
 <div class="marquee-strip">
   <div class="marquee-track">
-    <span>Quality Construction</span>
-    <span>Tenant Improvements</span>
-    <span>Public Works</span>
-    <span>Schools</span>
-    <span>Churches</span>
-    <span>Interior Framing</span>
-    <span>Exterior Framing</span>
-    <span>Door Installations</span>
-    <span>Panelized Roof Structures</span>
-    <span>Finish Carpentry</span>
-    <span>Complete Retail Centers</span>
-    <span>Strip Malls</span>
-    <span>Outlets</span>
-    <!-- duplicate for seamless loop -->
-    <span>Quality Construction</span>
-    <span>Tenant Improvements</span>
-    <span>Public Works</span>
-    <span>Schools</span>
-    <span>Churches</span>
-    <span>Interior Framing</span>
-    <span>Exterior Framing</span>
-    <span>Door Installations</span>
-    <span>Panelized Roof Structures</span>
-    <span>Finish Carpentry</span>
-    <span>Complete Retail Centers</span>
-    <span>Strip Malls</span>
-    <span>Outlets</span>
+    <div class="marquee-group">
+      <span>Quality Construction</span>
+      <span>Tenant Improvements</span>
+      <span>Public Works</span>
+      <span>Schools</span>
+      <span>Churches</span>
+      <span>Interior Framing</span>
+      <span>Exterior Framing</span>
+      <span>Door Installations</span>
+      <span>Panelized Roof Structures</span>
+      <span>Finish Carpentry</span>
+      <span>Complete Retail Centers</span>
+      <span>Strip Malls</span>
+      <span>Outlets</span>
+    </div>
+    <div class="marquee-group" aria-hidden="true">
+      <span>Quality Construction</span>
+      <span>Tenant Improvements</span>
+      <span>Public Works</span>
+      <span>Schools</span>
+      <span>Churches</span>
+      <span>Interior Framing</span>
+      <span>Exterior Framing</span>
+      <span>Door Installations</span>
+      <span>Panelized Roof Structures</span>
+      <span>Finish Carpentry</span>
+      <span>Complete Retail Centers</span>
+      <span>Strip Malls</span>
+      <span>Outlets</span>
+    </div>
   </div>
 </div>
 
