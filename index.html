@@ -432,8 +432,22 @@
     .cred-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 768px) {
-    .nav-links { display: none; }
+    .nav-inner { position: relative; }
+    .nav-links {
+      display: none; position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column; align-items: stretch; gap: 0;
+      padding: 0.75rem clamp(1.5rem, 4vw, 4rem) 1.25rem;
+      background: rgba(244,241,236,0.98); border-bottom: 1px solid var(--concrete);
+      box-shadow: 0 14px 30px rgba(15,15,15,0.1);
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a { display: block; padding: 0.85rem 0; }
+    .nav-links a::after { display: none; }
+    .nav-cta { margin-top: 0.5rem; text-align: center; }
     .hamburger { display: block; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     .split { grid-template-columns: 1fr; }
     .hero-stats { gap: 2rem; flex-wrap: wrap; }
     .services-grid { grid-template-columns: 1fr; }
@@ -456,14 +470,14 @@
         <span>General Contractor &bull; Lic #592387</span>
       </div>
     </a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="primary-navigation">
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#safety">Safety</a></li>
       <li><a href="#contact" class="nav-cta">Contact Us</a></li>
     </ul>
-    <button class="hamburger" aria-label="Menu">
+    <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -830,6 +844,30 @@
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  const menuButton = document.querySelector('.hamburger');
+  const navigation = document.querySelector('.nav-links');
+
+  const closeMenu = () => {
+    menuButton.classList.remove('open');
+    navigation.classList.remove('open');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Open menu');
+  };
+
+  menuButton.addEventListener('click', () => {
+    const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+    menuButton.classList.toggle('open', !isOpen);
+    navigation.classList.toggle('open', !isOpen);
+    menuButton.setAttribute('aria-expanded', String(!isOpen));
+    menuButton.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu');
+  });
+
+  navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) closeMenu();
+  });
 </script>
 </body>
 </html>
