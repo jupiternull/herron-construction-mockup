@@ -265,33 +265,13 @@
   /* ─── PROJECT TYPES ─── */
   .projects-section { background: var(--ink); color: var(--paper); }
   .projects-section .section-sub { color: var(--concrete); }
-  .capabilities-panel {
-    margin-top: clamp(3rem, 6vw, 5rem);
-    padding: clamp(1.25rem, 4vw, 3.5rem);
-    background: var(--ink); color: var(--paper);
-  }
   .projects-eyebrow {
     font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
     line-height: 1.4; letter-spacing: 0.18em; text-transform: uppercase;
   }
-  .capability-grid {
-    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0 clamp(1rem, 2.5vw, 2rem); margin-top: clamp(2rem, 4vw, 3rem);
-    list-style: none; counter-reset: capability;
-  }
-  .capability-grid li {
-    min-width: 0; padding: 1rem 0 1.25rem;
-    border-top: 1px solid rgba(244,241,236,0.2); counter-increment: capability;
-    font-size: clamp(0.875rem, 1.2vw, 1rem); font-weight: 500; line-height: 1.5;
-  }
-  .capability-grid li::before {
-    content: '';
-    display: block; width: 1.5rem; height: 1.5rem; margin-bottom: 0.65rem;
-    background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23c4552d%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cg%20transform%3D%22rotate%28-45%2012%2012%29%22%3E%3Cpath%20d%3D%22M7.5%203.5h9%22%2F%3E%3Cpath%20d%3D%22M12%203.5v17%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2845%2012%2012%29%22%3E%3Cpath%20d%3D%22M7.5%203.5h9%22%2F%3E%3Cpath%20d%3D%22M12%203.5v17%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") no-repeat center / contain;
-  }
   .selected-work-header {
     display: flex; align-items: center; gap: 1rem;
-    margin-top: clamp(4rem, 8vw, 7rem); margin-bottom: 1.25rem;
+    margin-top: clamp(3rem, 6vw, 5rem); margin-bottom: 1.25rem;
     color: var(--concrete);
   }
   .selected-work-header::after {
@@ -583,11 +563,14 @@
   .delay-2 { transition-delay: 0.2s; }
   .delay-3 { transition-delay: 0.3s; }
   .delay-4 { transition-delay: 0.4s; }
+  .delay-5 { transition-delay: 0.5s; }
+  .delay-6 { transition-delay: 0.6s; }
+  .delay-7 { transition-delay: 0.7s; }
+  .delay-8 { transition-delay: 0.8s; }
 
   /* ─── RESPONSIVE ─── */
   @media (max-width: 1024px) {
     .services-grid { grid-template-columns: repeat(2, 1fr); }
-    .capability-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .projects-grid .project-image { grid-column: auto; grid-row: auto; aspect-ratio: 3 / 2; }
     .projects-grid .project-image:first-child,
@@ -734,36 +717,60 @@
     </div>
     <div class="services-grid">
       <div class="service-card fade-up delay-1">
-        <span class="card-number">01</span>
         <div class="service-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-45 12 12)"><path d="M7.5 3.5h9"/><path d="M12 3.5v17"/></g><g transform="rotate(45 12 12)"><path d="M7.5 3.5h9"/><path d="M12 3.5v17"/></g></svg>
         </div>
-        <h3>Retail Centers</h3>
-        <p>Complete retail center construction from ground up, including strip malls and outlet developments across California.</p>
+        <h3>Complete Retail Centers</h3>
+        <p>Ground-up retail construction, from strip malls to outlet developments across California.</p>
       </div>
       <div class="service-card fade-up delay-2">
-        <span class="card-number">02</span>
         <div class="service-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-45 12 12)"><path d="M7.5 3.5h9"/><path d="M12 3.5v17"/></g><g transform="rotate(45 12 12)"><path d="M7.5 3.5h9"/><path d="M12 3.5v17"/></g></svg>
         </div>
-        <h3>Repair</h3>
-        <p>Professional repair services with personalized attention, designed to deliver stress-free solutions tailored to your needs.</p>
+        <h3>Siding Systems</h3>
+        <p>Exterior siding systems engineered for durability, performance, and lasting curb appeal.</p>
       </div>
       <div class="service-card fade-up delay-3">
-        <span class="card-number">03</span>
         <div class="service-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-45 12 12)"><path d="M7.5 3.5h9"/><path d="M12 3.5v17"/></g><g transform="rotate(45 12 12)"><path d="M7.5 3.5h9"/><path d="M12 3.5v17"/></g></svg>
         </div>
-        <h3>Remodel</h3>
-        <p>Tackle even the most complex remodeling projects with our experienced team, ensuring complete client satisfaction.</p>
+        <h3>Tenant Improvements</h3>
+        <p>Buildouts and renovations that transform existing retail and commercial spaces.</p>
       </div>
       <div class="service-card fade-up delay-4">
-        <span class="card-number">04</span>
         <div class="service-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-45 12 12)"><path d="M7.5 3.5h9"/><path d="M12 3.5v17"/></g><g transform="rotate(45 12 12)"><path d="M7.5 3.5h9"/><path d="M12 3.5v17"/></g></svg>
         </div>
-        <h3>Install</h3>
-        <p>From wall framing and door installations to panelized roof structures and finish carpentry, handled end to end.</p>
+        <h3>Public Works Projects</h3>
+        <p>Bondable public works construction delivered on schedule and on budget.</p>
+      </div>
+      <div class="service-card fade-up delay-5">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-45 12 12)"><path d="M7.5 3.5h9"/><path d="M12 3.5v17"/></g><g transform="rotate(45 12 12)"><path d="M7.5 3.5h9"/><path d="M12 3.5v17"/></g></svg>
+        </div>
+        <h3>Schools &amp; Churches</h3>
+        <p>Institutional framing and construction for schools, churches, and community buildings.</p>
+      </div>
+      <div class="service-card fade-up delay-6">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-45 12 12)"><path d="M7.5 3.5h9"/><path d="M12 3.5v17"/></g><g transform="rotate(45 12 12)"><path d="M7.5 3.5h9"/><path d="M12 3.5v17"/></g></svg>
+        </div>
+        <h3>Interior &amp; Exterior Framing</h3>
+        <p>Wood and steel framing for interior and exterior structural systems at any scale.</p>
+      </div>
+      <div class="service-card fade-up delay-7">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-45 12 12)"><path d="M7.5 3.5h9"/><path d="M12 3.5v17"/></g><g transform="rotate(45 12 12)"><path d="M7.5 3.5h9"/><path d="M12 3.5v17"/></g></svg>
+        </div>
+        <h3>Mezzanines</h3>
+        <p>Structural mezzanine systems that add usable square footage within existing shells.</p>
+      </div>
+      <div class="service-card fade-up delay-8">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-45 12 12)"><path d="M7.5 3.5h9"/><path d="M12 3.5v17"/></g><g transform="rotate(45 12 12)"><path d="M7.5 3.5h9"/><path d="M12 3.5v17"/></g></svg>
+        </div>
+        <h3>Panelized Roof Structures</h3>
+        <p>Prefabricated panelized roof systems for faster, more precise installation.</p>
       </div>
     </div>
   </div>
@@ -807,18 +814,6 @@
       <div class="section-label">Our Portfolio</div>
       <h2 id="projects-heading" class="section-heading" style="color:var(--paper)">Projects That <em>Stand the Test</em> of Time</h2>
       <p class="section-sub">From public works to places of worship, our portfolio spans every type of commercial and institutional construction.</p>
-    </div>
-    <div class="capabilities-panel" role="group" aria-label="Construction capabilities">
-      <ul class="capability-grid" aria-label="Construction capabilities" role="list">
-        <li>Complete Retail Centers</li>
-        <li>Siding Systems</li>
-        <li>Tenant Improvements</li>
-        <li>Public Works Projects</li>
-        <li>Schools &amp; Churches</li>
-        <li>Interior &amp; Exterior Framing</li>
-        <li>Mezzanines</li>
-        <li>Panelized Roof Structures</li>
-      </ul>
     </div>
     <div class="selected-work-header">
       <h3 class="projects-eyebrow" id="selected-work-heading">Selected Work</h3>
