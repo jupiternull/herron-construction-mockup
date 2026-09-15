@@ -285,10 +285,9 @@
     font-size: clamp(0.875rem, 1.2vw, 1rem); font-weight: 500; line-height: 1.5;
   }
   .capability-grid li::before {
-    content: counter(capability, decimal-leading-zero);
-    display: block; margin-bottom: 0.65rem;
-    color: var(--accent); font-size: 0.65rem; font-weight: 400;
-    font-variant-numeric: tabular-nums; letter-spacing: 0.06em;
+    content: '';
+    display: block; width: 0.8rem; height: 0.8rem; margin-bottom: 0.65rem;
+    background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23c4552d%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cg%20transform%3D%22rotate%28-45%2012%2012%29%22%3E%3Cpath%20d%3D%22M7.5%203.5h9%22%2F%3E%3Cpath%20d%3D%22M12%203.5v17%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22rotate%2845%2012%2012%29%22%3E%3Cpath%20d%3D%22M7.5%203.5h9%22%2F%3E%3Cpath%20d%3D%22M12%203.5v17%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") no-repeat center / contain;
   }
   .selected-work-header {
     display: flex; align-items: center; gap: 1rem;
